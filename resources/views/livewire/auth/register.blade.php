@@ -1,7 +1,7 @@
-<div class="min-h-screen flex items-center justify-center px-4 py-8">
+<main class="min-h-screen flex items-center justify-center px-4 py-8">
     <div class="w-full max-w-md bg-white rounded-xl shadow p-8">
         <h1 class="text-2xl font-bold text-center mb-1">Daftar Akun</h1>
-        <p class="text-center text-gray-500 mb-6">Buat akun member baru</p>
+        <p class="text-center text-gray-600 mb-6">Buat akun member baru</p>
 
         <form wire:submit="register" class="space-y-4">
             <div>
@@ -44,9 +44,9 @@
             </button>
         </form>
 
-        <p class="mt-6 text-center text-sm text-gray-600">
+        <p class="mt-6 text-center text-sm text-gray-700">
             Sudah punya akun?
-            <a href="{{ route('login') }}" wire:navigate class="text-blue-600 hover:underline">Masuk</a>
+            <a href="{{ route('login') }}" wire:navigate class="text-blue-700 underline hover:text-blue-800">Masuk</a>
         </p>
     </div>
-</div>
+</main>

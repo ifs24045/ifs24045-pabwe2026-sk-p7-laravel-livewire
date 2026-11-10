@@ -1,3 +1,4 @@
+{{-- resources/views/components/layouts/app.blade.php --}}
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,7 +13,7 @@
             <aside class="bg-white border-b md:border-b-0 md:border-r md:w-64 md:min-h-screen flex flex-col">
                 <div class="px-6 py-5 border-b">
                     <p class="text-lg font-bold">{{ config('app.name') }}</p>
-                    <p class="text-sm text-gray-500">
+                    <p class="text-sm text-gray-600">
                         {{ auth()->user()->name }} &middot; {{ ucfirst(auth()->user()->role) }}
                     </p>
                 </div>
@@ -52,7 +53,9 @@
             </main>
         </div>
     @else
-        {{ $slot }}
+        <main>
+            {{ $slot }}
+        </main>
     @endauth
 </body>
 </html>

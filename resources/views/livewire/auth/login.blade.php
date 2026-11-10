@@ -1,7 +1,7 @@
-<div class="min-h-screen flex items-center justify-center px-4">
+<main class="min-h-screen flex items-center justify-center px-4">
     <div class="w-full max-w-md bg-white rounded-xl shadow p-8">
         <h1 class="text-2xl font-bold text-center mb-1">{{ config('app.name') }}</h1>
-        <p class="text-center text-gray-500 mb-6">Silakan masuk ke akun Anda</p>
+        <p class="text-center text-gray-600 mb-6">Silakan masuk ke akun Anda</p>
 
         <form wire:submit="authenticate" class="space-y-4">
             <div>
@@ -18,7 +18,7 @@
                 @error('password') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
 
-            <label class="flex items-center gap-2 text-sm text-gray-600">
+            <label class="flex items-center gap-2 text-sm text-gray-700">
                 <input type="checkbox" wire:model="remember" class="rounded border-gray-300">
                 Ingat saya
             </label>
@@ -29,9 +29,9 @@
             </button>
         </form>
 
-        <p class="mt-6 text-center text-sm text-gray-600">
+        <p class="mt-6 text-center text-sm text-gray-700">
             Belum punya akun?
-            <a href="{{ route('register') }}" wire:navigate class="text-blue-600 hover:underline">Daftar</a>
+            <a href="{{ route('register') }}" wire:navigate class="text-blue-700 underline hover:text-blue-800">Daftar</a>
         </p>
     </div>
-</div>
+</main>

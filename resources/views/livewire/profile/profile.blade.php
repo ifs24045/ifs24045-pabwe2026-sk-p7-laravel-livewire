@@ -1,7 +1,7 @@
 <div class="mx-auto max-w-3xl space-y-6">
     <div>
         <h1 class="text-2xl font-bold">Profil</h1>
-        <p class="text-sm text-gray-500">Kelola data akun, password, dan foto profil Anda.</p>
+        <p class="text-sm text-gray-600">Kelola data akun, password, dan foto profil Anda.</p>
     </div>
 
     <section class="rounded-xl bg-white p-6 shadow">
@@ -26,6 +26,7 @@
             @endif
 
             <form wire:submit="updatePhoto" class="flex-1 space-y-2">
+                <label for="profile-photo" class="block text-sm font-medium text-gray-700 mb-1">Pilih foto profil</label>
                 <input id="profile-photo" type="file" wire:model="photo" accept="image/png,image/jpeg,image/webp"
                     class="block w-full text-sm">
                 <div wire:loading wire:target="photo" class="text-sm text-gray-500">Mengunggah...</div>

@@ -2,7 +2,7 @@
     <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
             <h1 class="text-2xl font-bold">Daftar Stok</h1>
-            <p class="text-sm text-gray-500">Kelola stok barang milik Anda.</p>
+            <p class="text-sm text-gray-600">Kelola stok barang milik Anda.</p>
         </div>
                 <div class="flex flex-wrap gap-2">
              <button id="stock-ai-button" type="button" wire:click="openAi"
@@ -39,8 +39,9 @@
             placeholder="Cari nama atau SKU..."
             class="w-full sm:max-w-xs rounded-lg border border-gray-300 bg-white px-3 py-2 focus:border-blue-500 focus:outline-none">
 
-        <select id="stock-status-filter" wire:model.live="status"
-            class="w-full sm:w-48 rounded-lg border border-gray-300 bg-white px-3 py-2 focus:border-blue-500 focus:outline-none">
+            <select id="stock-status-filter" wire:model.live="status"
+                aria-label="Filter status stok"
+                class="w-full sm:w-48 rounded-lg border border-gray-300 bg-white px-3 py-2 focus:border-blue-500 focus:outline-none">
             <option value="">Semua status</option>
             @foreach ($statuses as $item)
                 <option value="{{ $item->value }}">{{ $item->label() }}</option>
