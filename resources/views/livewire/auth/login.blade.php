@@ -34,4 +34,4 @@
             <a href="{{ route('register') }}" wire:navigate class="text-blue-700 underline hover:text-blue-800">Daftar</a>
         </p>
     </div>
-</main>
+</div>

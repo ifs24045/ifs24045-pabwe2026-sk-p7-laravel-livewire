@@ -53,7 +53,9 @@
             </main>
         </div>
     @else
+        <main>
             {{ $slot }}
+        </main>
     @endauth
 </body>
 </html>

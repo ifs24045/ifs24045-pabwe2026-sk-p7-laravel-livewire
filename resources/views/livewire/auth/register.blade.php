@@ -49,4 +49,4 @@
             <a href="{{ route('login') }}" wire:navigate class="text-blue-700 underline hover:text-blue-800">Masuk</a>
         </p>
     </div>
-</main>
+</div>
