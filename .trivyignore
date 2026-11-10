@@ -1,0 +1,9 @@
+# Risiko yang diterima, dengan alasan terdokumentasi:
+# GHSA-mrv2-3pqr-j5jr (dompurify <= 3.4.16, HIGH, belum ada CVE).
+# Hanya dapat dieksploitasi jika DOMPurify.sanitize() dipakai dengan IN_PLACE: true
+# bersama hook kustom yang melepas node induk/saudara.
+# dompurify dibawa oleh @toast-ui/editor (editor Markdown di halaman detail stok).
+# Toast UI hanya memanggil sanitize(string, {ADD_TAGS, ADD_ATTR, FORBID_TAGS}) tanpa IN_PLACE,
+# sehingga jalur eksploitasinya tidak terjangkau. Belum ada rilis Toast UI dengan dompurify terbaru.
+# Deskripsi stok dirender di server (Str::markdown, html_input=strip), bukan oleh Toast UI.
+GHSA-mrv2-3pqr-j5jr
