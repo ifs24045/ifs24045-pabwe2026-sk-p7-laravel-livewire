@@ -44,4 +44,7 @@ Route::middleware('throttle:1000-per-second')->group(function () {
         Route::get('/users', UserList::class)->name('users.index');
         Route::get('/users/{user}/stocks', AdminUserStockList::class)->name('users.stocks');
     });
+    Route::get('/', function () {
+    return redirect('/login');
+    });
 });
