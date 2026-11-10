@@ -45,6 +45,12 @@ Route::middleware('throttle:1000-per-second')->group(function () {
         Route::get('/users/{user}/stocks', AdminUserStockList::class)->name('users.stocks');
     });
     Route::get('/', function () {
+    if (auth()->check()) {
+        if (auth()->user()->role === 'admin') {
+            return redirect('/admin/users');
+        }
+        return redirect('/stocks');
+    }
     return redirect('/login');
     });
 });
