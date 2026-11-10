@@ -17,7 +17,7 @@
                         <img src="{{ asset('storage/' . $stock->cover_image_path) }}" alt="{{ $stock->name }}"
                             class="w-full rounded-lg object-cover">
                     @else
-                        <div class="flex h-48 w-full items-center justify-center rounded-lg bg-gray-200 text-sm text-gray-500">
+                        <div class="flex h-48 w-full items-center justify-center rounded-lg bg-gray-200 text-sm text-gray-600">
                             Belum ada cover
                         </div>
                     @endif

@@ -70,7 +70,7 @@
                                 <img src="{{ asset('storage/' . $stock->cover_image_path) }}" alt="{{ $stock->name }}"
                                     class="h-10 w-10 rounded object-cover">
                             @else
-                                <div class="flex h-10 w-10 items-center justify-center rounded bg-gray-200 text-xs text-gray-500">N/A</div>
+                                <div class="flex h-10 w-10 items-center justify-center rounded bg-gray-200 text-xs text-gray-600">N/A</div>
                             @endif
                         </td>
                         <td class="px-4 py-3 font-medium">
