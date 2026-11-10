@@ -11,19 +11,25 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::factory()->admin()->create([
-            'name' => 'Administrator',
-            'username' => 'admin',
-            'email' => 'admin@example.com',
-            'password' => 'admin',
-        ]);
+        User::firstOrCreate(
+            ['username' => 'admin'],
+            [
+                'name' => 'Administrator',
+                'email' => 'admin@example.com',
+                'password' => 'admin',
+                'role' => User::ROLE_ADMIN,
+            ]
+        );
 
-        $member = User::factory()->create([
-            'name' => 'Member',
-            'username' => 'member',
-            'email' => 'member@example.com',
-            'password' => 'member',
-        ]);
+        $member = User::firstOrCreate(
+            ['username' => 'member'],
+            [
+                'name' => 'Member',
+                'email' => 'member@example.com',
+                'password' => 'member',
+                'role' => User::ROLE_MEMBER,
+            ]
+        );
 
         $items = [
             ['name' => 'Beras Premium 5kg', 'sku' => 'BRS-001', 'quantity' => 50, 'unit' => 'karung', 'price' => 68000, 'min_stock' => 10, 'description' => '**Beras premium** kualitas super, kemasan 5 kg.'],
@@ -34,10 +40,18 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($items as $item) {
-            Stock::factory()->create($item + [
-                'user_id' => $member->id,
-                'status' => StockStatus::fromQuantity($item['quantity'], $item['min_stock']),
-            ]);
+            Stock::firstOrCreate(
+                ['user_id' => $member->id, 'sku' => $item['sku']],
+                [
+                    'name' => $item['name'],
+                    'description' => $item['description'],
+                    'quantity' => $item['quantity'],
+                    'unit' => $item['unit'],
+                    'price' => $item['price'],
+                    'min_stock' => $item['min_stock'],
+                    'status' => StockStatus::fromQuantity($item['quantity'], $item['min_stock'])->value,
+                ]
+            );
         }
     }
 }
